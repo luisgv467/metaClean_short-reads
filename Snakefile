@@ -27,6 +27,8 @@ rule fastp:
 		fwd_clean = OUTPUT+"{sample}-R1.fastq.gz",
 		rev_clean = OUTPUT+"{sample}-R2.fastq.gz",
 		flag = "{sample}-fastp_done.txt"
+	conda:
+		"envs/metaclean.yml"
 	shell:
 		"""
 		fastp \
@@ -50,6 +52,8 @@ rule bowtie2:
 	output:
 		sam = OUTPUT+"{sample}-SAMPLE_mapped_and_unmapped.sam",
 		flag = "{sample}-bowtie_done.txt"
+	conda:
+		"envs/metaclean.yml"
 	shell:
 		"""
 		bowtie2 -x /data/pam/lg21g/scratch/Programs/Human_reference_bowtie2/host_DB \
@@ -71,6 +75,8 @@ rule samtools_sam_to_bam:
 	output:
 		bam = OUTPUT+"{sample}-SAMPLE_mapped_and_unmapped.bam",
 		flag = "{sample}-sam_to_bam_done.txt"
+	conda:
+		"envs/metaclean.yml"
 	shell:
 		"""
 		samtools view \
@@ -89,6 +95,8 @@ rule samtools_retain_unmapped_reads:
 	output:
 		bam = OUTPUT+"{sample}-SAMPLE_bothEndsUnmapped.bam",
 		flag = "{sample}-retain_unmapped_reads_done.txt"
+	conda:
+		"envs/metaclean.yml"
 	shell:
 		"""
 		samtools view -b \
@@ -108,6 +116,8 @@ rule samtools_sort_bam:
 	output:
 		bam = OUTPUT+"{sample}-SAMPLE_bothEndsUnmapped_sorted.bam",
 		flag = "{sample}-sorted_bam_done.txt"
+	conda:
+		"envs/metaclean.yml"
 	shell:
 		"""
 		samtools sort \
@@ -127,6 +137,8 @@ rule samtools_clean_fastqs:
 		fwd = OUTPUT+"{sample}_1.fastq.gz",
 		rev = OUTPUT+"{sample}_2.fastq.gz",
 		flag = "{sample}-all_done.txt"
+	conda:
+		"envs/metaclean.yml"
 	shell:
 		"""
 		samtools fastq \
