@@ -56,7 +56,7 @@ rule bowtie2:
 		"envs/metaclean.yml"
 	shell:
 		"""
-		bowtie2 -x /data/pam/lg21g/scratch/Programs/Human_reference_bowtie2/host_DB \
+		bowtie2 -x index/host_DB \
   		-1 {params.fwd_clean} \
   		-2 {params.rev_clean} \
   		-p 24 \
