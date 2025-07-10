@@ -1,0 +1,8 @@
+name: metaclean
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - fastp
+  - samtools
+  - bowtie2
