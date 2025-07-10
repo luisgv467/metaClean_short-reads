@@ -1,0 +1,10 @@
+# Required arguments
+
+input:
+    "/data/pam/lg21g/scratch/Programs/snakemake/MetaClean_short-reads/metagenome_paths.txt" #Sample files
+
+input_path:
+    "/data/pam/lg21g/scratch/random/project_lungPT/raw_reads/" #input path
+
+output:
+    "/data/pam/lg21g/scratch/random/project_lungPT/clean_reads/" # output directory to store results
