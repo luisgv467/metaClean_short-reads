@@ -1,7 +1,7 @@
-# metaClean - Cleaning raw metagenomes
+# metaClean (Short reads) - Cleaning raw metagenomes
 [Snakemake](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html) workflow to eliminate low-quality reads and human contamination from metagenomes. 
 
-The user provides a path to raw metagenomes to clean. The workflow runs `fastp` to eliminate low-quality reads (<20QC) and `bowtie2`/`samtools` to remove human contamination. This workflow eliminates raw reads and intermediate files for space-efficiency purposes. The output of this workflow are clean, compressed metagenomes. 
+The user provides a path to raw (short-read) metagenomes to clean. The workflow runs `fastp` to eliminate low-quality reads (<20QC) and `bowtie2`/`samtools` to remove human contamination. This workflow eliminates raw reads and intermediate files for space efficiency purposes. The output of this workflow is clean, compressed metagenomes. 
 
 ## Installation
 
@@ -75,7 +75,7 @@ If running locally:
 
 ## Output
 
-The downloaded fastqs will be located in the directory `Results/`
+The downloaded fastqs will be located in the directory `Results/`. You will also find a file called `Number_reads.txt` with the read count of all your clean metagenomes.  
 
 
 
