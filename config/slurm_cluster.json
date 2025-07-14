@@ -1,0 +1,41 @@
+{
+ "__default__": {
+  "jobname": "{rule}.{wildcards}",
+  "cores": "{resources.ncores}",
+  "mem": 5000,
+  "queue": "icelake",
+  "project": "ALMEIDA-SL3-CPU",
+  "time": "01:00:00",
+  "outfile": "{rule}.log"
+  },
+  "fastp": {
+  "cores": "5",
+  "mem": "5000",
+  "time": "00:10:00"
+  },
+  "bowtie2": {
+  "cores": "4",
+  "mem": "30000",
+  "time": "10:00:00"
+  },
+  "samtools_sam_to_bam": {
+  "cores": "2",
+  "mem": "4000",
+  "time": "00:20:00"
+  },
+  "samtools_retain_unmapped_reads": {
+  "cores": "2",
+  "mem": "4000",
+  "time": "00:20:00"
+  },
+  "samtools_sort_bam": {
+  "cores": "2",
+  "mem": "4000",
+  "time": "00:20:00"
+  },
+  "samtools_clean_fastqs": {
+  "cores": "2",
+  "mem": "4000",
+  "time": "00:20:00"
+  }
+}
