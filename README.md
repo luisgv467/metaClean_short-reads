@@ -45,7 +45,7 @@ Build `Bowtie2` index
 
 ## Run snakemake workflow
 
-1. Get a file with the file paths of paired raw metagenomes you want to clean. Metagenomes should be compressed (`.gz`) and have a `_1.fastq.gz`/`_2.fastq.gz` extension. 
+1. Get a file with the file paths of paired raw metagenomes you want to clean. Metagenomes should be compressed (`.gz`) and have a `_1.fastq.gz`/`_2.fastq.gz` extension. We are just interested in the basename of the files, so we delete the path to the input files and the extension of the files (`_2.fastq.gz`) using `sed`. 
 
 <pre><code> ls path_to_raw_reads/*_2.fastq.gz | sed -e 's|path_to_raw_reads/||' -e 's|_2.fastq.gz||' > metagenome_paths.txt </pre></code> 
 
