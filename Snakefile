@@ -100,7 +100,7 @@ rule samtools_retain_unmapped_reads:
 	shell:
 		"""
 		samtools view -b \
- 		-f 4 \
+ 		-f 12 \
   		--threads 4 \
   		{params} \
   		-o {output.bam}
@@ -148,6 +148,8 @@ rule samtools_clean_fastqs:
 		-N  {params} \
 		--threads 4
 		rm {params}
+		scripts/count_reads.sh -i {output.fwd} -o Number_reads.txt
+		scripts/count_reads.sh -i {output.rev} -o Number_reads.txt
 		touch {output.flag}
 		"""
 
