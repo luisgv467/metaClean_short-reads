@@ -75,7 +75,7 @@ If running locally:
 
 ## Output
 
-The downloaded fastqs will be located in the directory `Results/`. You will also find a file called `Number_reads.txt` with the read count of all your clean metagenomes.  
+The clean fastqs will be located in the directory `Results/`. You will also find a file called `Number_reads.txt` with the read count of all your clean metagenomes.  
 
 
 
